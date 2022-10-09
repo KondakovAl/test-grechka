@@ -14,4 +14,4 @@
 
 #### 3. Откройте [http://localhost:3000](http://localhost:3000) для просмотра приложения в браузере.
 
-#### 4. Также вы можете ознакомиться с приложением без установки, напрямую по ссылке [https://test-grechka-73doi50z2-kondakoval.vercel.app/](https://test-grechka-73doi50z2-kondakoval.vercel.app/)
+#### 4. Также вы можете ознакомиться с приложением без установки, напрямую по ссылке [https://test-grechka.vercel.app/](https://test-grechka.vercel.app/)
