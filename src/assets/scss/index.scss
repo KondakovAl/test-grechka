@@ -1,0 +1,72 @@
+/*variables*/
+@import '/src/assets/scss/core/variables';
+/*fonts*/
+@import '/src/assets/scss/core/fonts';
+/*components*/
+@import '/src/assets/scss/components/index';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+select {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: transparent;
+}
+
+body {
+  font-family: $font-stack;
+  font-size: $font-size;
+  font-weight: 450;
+  line-height: $line-height;
+  color: $primary-color;
+  min-width: 300px;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: calc(100% - 50px);
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

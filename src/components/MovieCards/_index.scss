@@ -1,0 +1,63 @@
+.movie {
+  padding: 20px 0;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    gap: 50px 60px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-border-main;
+  &__content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  &__title {
+    min-height: 42px;
+    margin-bottom: 15px;
+  }
+  &__description {
+    text-align: justify;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &__buttons {
+    margin: auto 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  &__image-container {
+    display: flex;
+  }
+  &__number {
+    position: relative;
+    margin-bottom: 20px;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 11px;
+      left: 10%;
+      height: 2px;
+      width: 120px;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  border-bottom: 1px solid $color-border-main;
+  padding: 20px 0;
+  position: relative;
+  &__wrapper {
+    display: flex;
+    overflow: hidden;
+  }
+}
+
+.navigation {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 300px;
+  border: 1px solid $color-border-main;
+  padding: 50px;
+  top: 0;
+  left: 0;
+  font-size: 20px;
+  background-color: $color-light;
+  transition: transform 0.5s ease-in;
+  z-index: 100;
+  animation: animationNavigation 0.5s ease-in forwards;
+
+  &__item {
+    padding: 10px;
+    align-self: center;
+  }
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 10px;
+    font-size: 45px;
+    transition: color 0.4s ease;
+    cursor: pointer;
+    &:hover {
+      color: $color-grey;
+    }
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  animation: animationOverlay 0.5s ease-in forwards;
+}
+
+@keyframes animationOverlay {
+  0% {
+    backdrop-filter: none;
+  }
+  100% {
+    backdrop-filter: blur(2px);
+  }
+}
+
+@keyframes animationNavigation {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

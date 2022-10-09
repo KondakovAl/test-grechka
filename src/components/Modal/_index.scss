@@ -1,0 +1,101 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  display: flex;
+  animation: BgBrightness 0.5s ease-in-out forwards;
+  &__content {
+    padding: 20px;
+    border: 1px solid $color-border-main;
+    background-color: $color-light;
+    width: calc(100% - 10px);
+    max-width: 700px;
+    margin: auto;
+    animation: modalApperance 0.5s ease-in-out, bgOpacity 0.5s ease-in-out;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  &__title {
+    font-size: 21px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  &__close {
+    font-size: 45px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    &:hover {
+      color: $color-grey;
+    }
+  }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+  }
+
+  &__feature {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__rating {
+    display: flex;
+    gap: 5px;
+  }
+}
+
+.rating {
+  &__input {
+    display: none;
+  }
+  &__container {
+    & svg path {
+      stroke: $color-border-main;
+      fill: $color-grey;
+      transition: fill 0.5s ease;
+    }
+    &.--fill {
+      & svg path {
+        fill: $color-gold;
+      }
+    }
+  }
+}
+
+@keyframes BgOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes BgBrightness {
+  0% {
+    backdrop-filter: brightness(1);
+  }
+  100% {
+    backdrop-filter: brightness(0.7);
+  }
+}
+
+@keyframes modalApperance {
+  0% {
+    transform: scale(0.3) translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
